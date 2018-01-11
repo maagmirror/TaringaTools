@@ -1,0 +1,7 @@
+#logo1 {
+    float: left;
+    width: 10%;
+    object-fit: contain;
+    max-height: 75px;
+    padding-left: 100px;
+}
