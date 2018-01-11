@@ -22,7 +22,7 @@ function main() {
     var getID = function(nickName){
         var dfd = $.Deferred();
         $.ajax({
-            url: 'http://api.taringa.net/user/nick/view/' + nickName,
+            url: 'https://api.taringa.net/user/nick/view/' + nickName,
             success: function(response){
                 dfd.resolve(response['id'])
             },
@@ -37,7 +37,7 @@ function main() {
     var getFollowings = function() {
         var dfd = $.Deferred();
         $.ajax({
-            url: 'http://api.taringa.net/user/followings/view/' + userid + '?count=50&page=' + page,
+            url: 'https://api.taringa.net/user/followings/view/' + userid + '?count=50&page=' + page,
             success: function(response){
                 if(response.length > 0) {
                     for (x in response) {
@@ -81,7 +81,7 @@ function main() {
         $('#info').append('<p style="padding-bottom: 10px;">Seguidos baneados</p>');
         for (x in banned) {
             if (banned.hasOwnProperty(x)){
-                $('#baneados').append('<li><a href="http://www.taringa.net/' + banned[x] + '" target="_blank"><img src="' + avatar[x] + '" title="' + banned[x] + '"/><br>' + banned[x] + ' </a></li>');
+                $('#baneados').append('<li><a href="https://www.taringa.net/' + banned[x] + '" target="_blank"><img src="' + avatar[x] + '" title="' + banned[x] + '"/><br>' + banned[x] + ' </a></li>');
             }
         }
     }
