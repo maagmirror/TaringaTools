@@ -13,7 +13,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
     <script src="js/ban.js" type="text/javascript"></script>
-    <script src="js/quienesalpha.js" type="text/javascript"></script>
     
 </head>
 
@@ -33,20 +32,20 @@
             </div>
         </nav>
 
-                <center>
-                    <div class="page">
-                        <h1 style="text-align: center;">Seguidos baneados</h1>
-                        <h3><p>Ingresa tu nombre de usuario y te muestro una lista de usuarios que sigues y estan baneados.<br></h3>
-                        <h4><p>(Si sigues a muchas personas esto puede demorar)</p></h4>
-                        <input id="input-text" placeholder="Usuario..."/>
-                        <input type="button" id="btn-send" value="Confirmar"/>
-                        <ul id="baneados">
-                            <div id="ban-content">
-                                <img src="https://maag.xyz/loader.gif" class="loader"/>
-                            </div>
-                        </ul>
-                    </div>
-                </center>
+             <div class="page">
+                 <div class="content">
+                    <h1 style="text-align: center;">Seguidos baneados</h1>
+                        <p>Ingresa tu nombre de usuario y te muestro una lista de usuarios que sigues y estan baneados.<br>
+                         <strong>Si sigues a muchas personas esto puede demorar,</strong></p> 
+                        <p> <a href="http://www.taringa.net/maag-">esta página es propiedad de Maag</a></p> 
+                     <input id="input-text" placeholder="Usuario..."/>
+                    <input type="button" id="btn-send" value="Confirmar"/>
+                 <div id="info"></div>
+             <div id="ban-content">
+                 <img src="/loader.gif" class="loader"/>
+                  <ul id="baneados"></ul>
+                </font>
+             </div>
 </body>
 
 </html>

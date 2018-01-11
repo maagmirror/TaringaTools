@@ -6,7 +6,7 @@ function main() {
     var userid;
     var page = 1;
     var avatar = [];
-    $('#input-text').val('');
+    $('#input-text').val(''); /* Si alguno lee esto y sabe una forma mas inteligente de ocultar DOM y agregar, avisen pli <33 */
     $('#baneados li').remove();
     $('#baneados p').remove();
     $('#info p').remove();
@@ -22,7 +22,7 @@ function main() {
     var getID = function(nickName){
         var dfd = $.Deferred();
         $.ajax({
-            url: 'https://api.taringa.net/user/nick/view/' + nickName,
+            url: 'http://api.taringa.net/user/nick/view/' + nickName,
             success: function(response){
                 dfd.resolve(response['id'])
             },
@@ -37,7 +37,7 @@ function main() {
     var getFollowings = function() {
         var dfd = $.Deferred();
         $.ajax({
-            url: 'https://api.taringa.net/user/followings/view/' + userid + '?count=50&page=' + page,
+            url: 'http://api.taringa.net/user/followings/view/' + userid + '?count=50&page=' + page,
             success: function(response){
                 if(response.length > 0) {
                     for (x in response) {
@@ -50,7 +50,7 @@ function main() {
                     }
                     page++;
                 }
-                dfd.resolve(response);
+                dfd.resolve(response); /* Se que no esta muy bien esto pero weno :c */
             }
         });
         return dfd.promise();
@@ -75,13 +75,13 @@ function main() {
         })
     }
 
-    function lastFunction(){ 
+    function lastFunction(){ /* Best name ever */
         clean();
         $('#ban-content p').remove();
         $('#info').append('<p style="padding-bottom: 10px;">Seguidos baneados</p>');
         for (x in banned) {
             if (banned.hasOwnProperty(x)){
-                $('#baneados').append('<li><a href="https://www.taringa.net/' + banned[x] + '" target="_blank"><img src="' + avatar[x] + '" title="' + banned[x] + '"/><br>' + banned[x] + ' </a></li>');
+                $('#baneados').append('<li><a href="http://www.taringa.net/' + banned[x] + '" target="_blank"><img src="' + avatar[x] + '" title="' + banned[x] + '"/><br>' + banned[x] + ' </a></li>');
             }
         }
     }
